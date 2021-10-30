@@ -1,18 +1,23 @@
 # postcss-auto2remvw
 
-[PostCSS] plugin auto change px 2 rem & vw.
+[PostCSS](https://github.com/postcss/postcss) plugin auto change px to rem & vw.
 
-[PostCSS]: https://github.com/postcss/postcss
+## Intro
+
+The rem layout is affected by the root font-size, if Android turns on the font-size enlargement mode, it will cause the whole layout to crash.
+
+The viewport scale under Android is forced to 1, some Canvas drawing content is slightly blurred. Some Android devices have bug in changing scale, too many devices are difficult to locate the problem.
 
 ```css
 .foo {
-  /* Input example */
+  height: 100px;
 }
 ```
 
 ```css
 .foo {
-  /* Output example */
+  height: 0.133333rem;
+  height: 13.333333vw;
 }
 ```
 
@@ -36,10 +41,23 @@ and set this plugin in settings.
 ```diff
 module.exports = {
   plugins: [
-+   require('postcss-auto2remvw'),
++   require('postcss-auto2remvw')(config),
     require('autoprefixer')
   ]
 }
 ```
 
-[official docs]: https://github.com/postcss/postcss#usage
+## Config
+
+| Name              | Type                              | Default                 | Description                                                  |
+| ----------------- | --------------------------------- | ----------------------- | ------------------------------------------------------------ |
+| *baseSize*        | `{ rem: number, vw: number}`      | `{ rem: 750, vw: 7.5 }` | Base unit of the design draft for comparison with px         |
+| *precision*       | `{int}`                           | `6`                     | Calculation accuracy                                         |
+| *forceRemProps*   | `{string[]}`                      | `["font", "font-size"]` | Force only rem units to be used for properties               |
+| *keepRuleComment* | `string`                          | `"no-RemVw-next-line"`  | Disable next line to use auto2remvw, must use like `/* no-RemVw-next-line */` |
+| *keepFileComment* | `string`                          | `"auto2remvw-disable"`  | Disable next line to use auto2remvw ( must be the first line of the file ) |
+| *customConfigs*   | `{ reg: RegExp, config: Config }` | `undefined`             | Specify part of the file to use other configurations         |
+
+
+
+[postcss official docs]( https://github.com/postcss/postcss#usage)
