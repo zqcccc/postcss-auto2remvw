@@ -1,8 +1,13 @@
 {
   "name": "postcss-auto2remvw",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "PostCSS plugin auto change px 2 rem & vw",
-  "keywords": ["postcss", "css", "postcss-plugin", "postcss-auto2remvw"],
+  "keywords": [
+    "postcss",
+    "css",
+    "postcss-plugin",
+    "postcss-auto2remvw"
+  ],
   "scripts": {
     "test": "jest --coverage && eslint ."
   },
@@ -30,7 +35,10 @@
       "node": true,
       "es6": true
     },
-    "extends": ["eslint:recommended", "plugin:jest/recommended"],
+    "extends": [
+      "eslint:recommended",
+      "plugin:jest/recommended"
+    ],
     "rules": {
       "jest/expect-expect": "off"
     }
