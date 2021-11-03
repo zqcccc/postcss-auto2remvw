@@ -49,14 +49,15 @@ module.exports = {
 
 ## Config
 
-| Name              | Type                              | Default                 | Description                                                  |
-| ----------------- | --------------------------------- | ----------------------- | ------------------------------------------------------------ |
-| *baseSize*        | `{ rem: number, vw: number}`      | `{ rem: 750, vw: 7.5 }` | Base unit of the design draft for comparison with px         |
-| *precision*       | `{int}`                           | `6`                     | Calculation accuracy                                         |
-| *forceRemProps*   | `{string[]}`                      | `["font", "font-size"]` | Force only rem units to be used for properties               |
-| *keepRuleComment* | `string`                          | `"no-RemVw-next-line"`  | Disable next line to use auto2remvw, must use like `/* no-RemVw-next-line */` |
-| *keepFileComment* | `string`                          | `"auto2remvw-disable"`  | Disable next line to use auto2remvw ( must be the first line of the file ) |
-| *customConfigs*   | `{ reg: RegExp, config: Config }` | `undefined`             | Specify part of the file to use other configurations         |
+| Name              | Type                               | Default                 | Description                                                  |
+| ----------------- | ---------------------------------- | ----------------------- | ------------------------------------------------------------ |
+| *baseSize*        | `{ rem: number, vw: number }`      | `{ rem: 750, vw: 7.5 }` | Base unit of the design draft for comparison with px ( If you change this value you must have both rem and vw ) |
+| *precision*       | `int`                         | `6`                     | Calculation accuracy                                         |
+| *forceRemProps*   | `string[]`               | `["font", "font-size"]` | Force only rem units to be used for properties               |
+| *keepRuleComment* | `string`                           | `"no-RemVw-next-line"`  | Disable next line to use auto2remvw, must use like `/* no-RemVw-next-line */` |
+| *keepFileComment* | `string`                           | `"auto2remvw-disable"`  | Disable next line to use auto2remvw ( must be the first line of the file ) |
+| *customConfigs*   | `{ test: RegExp, config: Config }[]` | `undefined`             | Specify part of the file to use other configurations         |
+
 
 
 

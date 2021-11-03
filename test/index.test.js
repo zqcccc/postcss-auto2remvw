@@ -14,7 +14,6 @@ async function easeRun(
   })
   expect(result.css).toEqual(output)
   const warnings = result.warnings()
-  console.log("warnings: ", warnings)
   expect(warnings).toHaveLength(warningNum)
   if (warningNum) {
     expect(warnings[0].text).toEqual(warningText)

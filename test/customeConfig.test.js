@@ -3,12 +3,12 @@ const { join } = require('path')
 
 const plugin = require('..')
 
-it("custom config's reg is not a regexp", async () => {
+it("custom config's test is not a regexp", async () => {
   let result = await postcss([
     plugin({
       customConfigs: [
         {
-          reg: "test",
+          test: "test",
         },
       ],
     }),
@@ -21,7 +21,7 @@ it('different path use different config', async () => {
   let p = postcss([plugin({
     customConfigs: [
       {
-        reg: new RegExp('tiny-app/custom-path', 'g'),
+        test: new RegExp('tiny-app/custom-path', 'g'),
         config: {
           baseSize: {
             rem: 375, vw: 3.75

@@ -48,11 +48,11 @@ module.exports = (options = {}) => {
       }
       if (Array.isArray(config.customConfigs)) {
         config.customConfigs.forEach((schema) => {
-          if (!isRegExp(schema.reg)) {
+          if (!isRegExp(schema.test)) {
             result.warn("custom config's reg should be a RegExp")
             return
           }
-          if (schema.reg.test(filePath)) {
+          if (schema.test.test(filePath)) {
             config = Object.assign({}, config, schema.config)
           }
         })
