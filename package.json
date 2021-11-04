@@ -1,6 +1,6 @@
 {
   "name": "postcss-auto2remvw",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "PostCSS plugin auto change px 2 rem & vw",
   "keywords": [
     "postcss",
@@ -9,7 +9,8 @@
     "postcss-auto2remvw"
   ],
   "scripts": {
-    "test": "jest --coverage && eslint ."
+    "test": "jest --coverage && eslint .",
+    "publish": "clean-publish"
   },
   "author": "zqcccc <c9cu@qq.com>",
   "license": "MIT",
